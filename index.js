@@ -50,10 +50,10 @@ const getAllTags = (arr) => {
 getAllTags(users)
 
 const sumAllFollowers = (arr) => {
-    return (arr.map((user) => user.followers).reduce((total, current) => total + current, 0))
+    return arr.reduce((total, { followers }) => total + followers, 0)
 }
 
-sumAllFollowers(users)
+console.log(sumAllFollowers(users))
 
 const searchUsername = (arr, str) => {
     return (arr.filter((user) => user.username === str))
